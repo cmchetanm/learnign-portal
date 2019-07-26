@@ -18,6 +18,7 @@ class QuestionSerializer < ActiveModel::Serializer
                   {
                     id: question.id,
                     title: question.title,
+                    level: question.level,
                     options: question.options.map do |option|
                       {
                         id: option.id,

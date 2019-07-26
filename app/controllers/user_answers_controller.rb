@@ -9,7 +9,7 @@ class UserAnswersController < ApplicationController
     user = User.find_by(id: user_answer_params[:user_id])
     answer = answer.option_id == @option.id ? true : @option.title == "skip question" ? nil : false
 
-    user_answer = UserAnswer.find_or_intialize_by(user: @user, question: @question) do |f|
+    user_answer = UserAnswer.find_or_initialize_by(user: @user, question: @question) do |f|
       f.answer = answer
     end
     respond_to do |format|
